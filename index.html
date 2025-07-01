@@ -9,31 +9,8 @@
     <meta name="theme-color" content="#4338CA">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-    </script>
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .card {
-            background-color: white;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            padding: 1.5rem;
-        }
-        .dark .card { background-color: #1F2937; }
-        @media (max-width: 767px) {
-            .log-table thead { display: none; }
-            .log-table, .log-table tbody, .log-table tr, .log-table td { display: block; width: 100%; }
-            .log-table tr { margin-bottom: 1rem; border: 1px solid #374151; border-radius: 0.5rem; overflow: hidden; }
-            .log-table td { text-align: right; position: relative; padding-left: 50%; border-bottom: 1px solid #374151; }
-            .log-table td:last-child { border-bottom: 0; }
-            .log-table td::before { content: attr(data-label); position: absolute; left: 0.75rem; width: calc(50% - 1.5rem); text-align: left; font-weight: 600; }
-        }
-    </style>
+    <!-- Link to your new stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
 
@@ -53,11 +30,11 @@
                     <h2 class="text-xl font-bold mb-4">Enter Payment Details</h2>
                     <div class="input-group">
                         <label for="grossPayment" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Gross Payment Amount ($)</label>
-                        <input type="number" id="grossPayment" class="input-field bg-gray-50 dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-md" placeholder="e.g., 550">
+                        <input type="number" id="grossPayment" class="w-full bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-md p-2.5" placeholder="e.g., 550">
                     </div>
                     <div class="input-group">
                         <label for="boostPhase" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Boost Phase Selector</label>
-                        <select id="boostPhase" class="input-field bg-gray-50 dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-md">
+                        <select id="boostPhase" class="w-full bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-md p-2.5">
                             <option value="long-term">Long-Term Boost</option>
                             <option value="reserve">Reserve Boost</option>
                             <option value="innovation-gear">Innovation–Gear Boost</option>
@@ -96,7 +73,7 @@
                             <th>Gross</th><th>Boost Phase</th><th>Owner Pay</th><th>Tax</th><th>Biz Checking</th><th>Sub-Pool</th><th>Long-Term</th><th>Reserve</th><th>Innovation</th><th>Tithe Due</th>
                         </tr>
                     </thead>
-                    <tbody class="dark:border-gray-700"></tbody>
+                    <tbody></tbody>
                 </table>
             </div>
         </div>
